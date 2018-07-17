@@ -158,7 +158,7 @@ My method of extracting the lane lines is far from perfect. Off the top of my he
 * I assume that both lanes that I can see are fairly straight. If the car makes a sharp turn, the Hough Lines would give out significantly more noise.
 * The view mask assumes a certain camera placement and angle. The constrains might not hold if the camera location or orientation on the vehicle is changed.
 * The Algorithm can take up to 400 ms to respond to a change in irregular lane line data, due to my chosen history length.
-* The found lines are straight and do not bend to fit the curvature of the road.
+* The found lines are straight and do not bend to fit the curvature of the road. The lines are also long, sometimes resulting in weird crossovers, as in the challenge video. I have deliberately left them like that for now, as the real solution would account for the curvature of the road and not just shorten the lines.
 
 ## Possible improvements to your pipeline
 * There has to be a way to figure out if the road is turning. One could attempt to find curved lines, use the known angle of the camera to estimate the center of horizon, scan each individual patch of the line, etc.
